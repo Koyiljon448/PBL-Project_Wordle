@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <title>My Wordle</title>
+
+            <link rel="icon" icon="image/x-icon" href="wIcon.jpg">
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    createSquares();
+
+                    function createSquares() {
+                        const gameBoard = document.getElementById("board");
+                        
+                        for (let index = 0; index < 30; index++) {
+                            let square = document.createElement("div");
+                            square.classList.add("square");
+                            square.setAttribute("id", index + 1)
+                            gameBoard.appendChild(square);
+                        }
+                    }
+                });
+            </script>
+
+            <style>
+                #my-container{
+                    text-align: center;
+                    padding-top: 20px;
+                }
+                
+                #board-container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-grow: 1;
+                    overflow: hidden;
+                }
+
+                #board {
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                    grid-gap: 5px;
+                    padding: 10px;
+                    box-sizing: border-box;
+                }
+
+                .square {
+                    border: 2px solid rgb(58, 58, 60);
+                    min-width: 60px;
+                    min-height: 60px;
+                }
+
+                a:hover {
+                    color: forestgreen;
+                    text-decoration: none;
+                }
+
+                a {
+                    text-align: left; 
+                    color:whitesmoke; 
+                    padding-left:20px;
+                    text-decoration: none;
+                }
+            </style>
+    </head>
+
+    <body style="background-color: black; color:whitesmoke; font-family: 'Open Sans', system-ui;">
+        <a href="index.html">< Back</a>
+        <div id="my-container">
+            <header>
+                <h1>My Wordle</h1>
+                <hr style="background-color: rgb(58, 58, 60); width: 350px;">
+            </header>
+            
+            <div id="board-container">
+                <div id="board">
+
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
